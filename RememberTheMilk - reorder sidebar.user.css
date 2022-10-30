@@ -1,0 +1,93 @@
+/* ==UserStyle==
+@name           RememberTheMilk - reorder sidebar
+@namespace      github.com/bitoj/sitetweaks
+@version        1.0.0
+@description    Reorder features in Remember the Milk web app sidebar
+@author         Ronald P. Smits
+@license        MIT
+@preprocessor   less
+@var            number defs      "Default selections" 1 0 999 1
+@var            number favorites "Favorites"          2 0 999 1
+@var            number lists     "Lists"              3 0 999 1
+@var            number smart     "Smart Lists"        4 0 999 1
+@var            number contacts  "Contacts"           5 0 999 1
+@var            number tags      "Tags"               6 0 999 1
+@var            number locations "Locations"          7 0 999 1
+==/UserStyle== */
+
+/*
+MIT License
+
+Copyright (c) 2022 Ronald P. Smits
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+@-moz-document url-prefix("https://www.rememberthemilk.com/app/") {
+    div.b-aM-iP-Jw-wR {
+        overflow-y: auto;
+    }
+
+    div.iP-Jw {
+        bottom: auto;
+    }
+    
+    #\:2l\.p {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    #\:2l\.p > div:nth-child(1) {
+        display: none;
+    }
+
+    #\:2l\.p > div:nth-child(9) {
+        display: none;
+    }
+    
+
+    #\:2l\.p > div:nth-child(2) {
+        order: @defs;
+    }
+
+    #\:2l\.p > div:nth-child(3) {
+        order: @favorites;
+    }
+
+    #\:2l\.p > div:nth-child(4) {
+        order: @lists;
+    }
+
+    #\:2l\.p > div:nth-child(5) {
+        order: @smart;
+    }
+
+    #\:2l\.p > div:nth-child(6) {
+        order: @contacts;
+    }
+
+    #\:2l\.p > div:nth-child(7) {
+        order: @tags;
+    }
+
+    #\:2l\.p > div:nth-child(8) {
+        order: @locations;
+    }
+}
