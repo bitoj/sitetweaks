@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           RememberTheMilk - reorder sidebar
+@name           RTM - reorder sidebar
 @namespace      github.com/bitoj/sitetweaks
-@version        1.0.0
+@version        1.1.0
 @description    Reorder features in Remember the Milk web app sidebar
 @author         Ronald P. Smits
 @license        MIT
@@ -48,46 +48,49 @@ SOFTWARE.
         bottom: auto;
     }
     
-    #\:2l\.p {
+    .modify-features() {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-    }
 
-    #\:2l\.p > div:nth-child(1) {
-        display: none;
-    }
+        & > div:nth-child(1) {
+            display: none;
+        }
 
-    #\:2l\.p > div:nth-child(9) {
-        display: none;
+        & > div:nth-child(9) {
+            display: none;
+        }
+
+        & > div:nth-child(2) {
+            order: @defs;
+        }
+
+        & > div:nth-child(3) {
+            order: @favorites;
+        }
+
+        & > div:nth-child(4) {
+            order: @lists;
+        }
+        
+        & > div:nth-child(5) {
+            order: @smart;
+        }
+
+        & > div:nth-child(6) {
+            order: @contacts;
+        }
+
+        & > div:nth-child(7) {
+            order: @tags;
+        }
+
+        & > div:nth-child(8) {
+            order: @locations;
+        }
     }
     
-
-    #\:2l\.p > div:nth-child(2) {
-        order: @defs;
-    }
-
-    #\:2l\.p > div:nth-child(3) {
-        order: @favorites;
-    }
-
-    #\:2l\.p > div:nth-child(4) {
-        order: @lists;
-    }
-
-    #\:2l\.p > div:nth-child(5) {
-        order: @smart;
-    }
-
-    #\:2l\.p > div:nth-child(6) {
-        order: @contacts;
-    }
-
-    #\:2l\.p > div:nth-child(7) {
-        order: @tags;
-    }
-
-    #\:2l\.p > div:nth-child(8) {
-        order: @locations;
+    #\:2q\.p {
+        .modify-features();
     }
 }
