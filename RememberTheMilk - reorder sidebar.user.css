@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           RTM - reorder sidebar
 @namespace      github.com/bitoj/sitetweaks
-@version        1.1.0
+@version        1.2.0
 @description    Reorder features in Remember the Milk web app sidebar
 @author         Ronald P. Smits
 @license        MIT
@@ -40,11 +40,16 @@ SOFTWARE.
 */
 
 @-moz-document url-prefix("https://www.rememberthemilk.com/app/") {
-    div.b-aM-iP-Jw-wR {
+    div.b-lM-sP-Lw-GR > div[role="scrollbar"] {
+        display: none;
+    }
+
+    div.b-MR-J-GR {
+        overflow-x: hidden;
         overflow-y: auto;
     }
 
-    div.iP-Jw {
+    div.sP-Lw {
         bottom: auto;
     }
     
@@ -90,7 +95,7 @@ SOFTWARE.
         }
     }
     
-    #\:2q\.p {
+    #\:2r\.p {
         .modify-features();
     }
 }
